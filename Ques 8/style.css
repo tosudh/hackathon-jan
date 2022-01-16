@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#btn {
+  padding: 1em 2em;
+  border-radius: 8px 0;
+  background-color: coral;
+  border: none;
+}
+#btn:hover {
+  background-color: rgb(173, 84, 51);
+  color: #fff;
+}
+#btn:active {
+  color: #ccc;
+  background-color: coral;
+}

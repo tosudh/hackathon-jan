@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="top">
+        <img id="img" src="" alt="" class="src" />
+        <span id="name"></span>
+      </div>
+      <div class="bottom">
+        <span id="email"></span>
+        <span id="location"></span>
+        <span id="age"></span>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    (async () => {
+      let response = await fetch("https://randomuser.me/api/");
+      let data = await response.json();
+
+      let user = data.results[0];
+      console.log(user);
+      document.getElementById("img").src = user.picture.large;
+      document.getElementById("name").textContent =
+        user.name.title + " " + user.name.first + " " + user.name.last;
+      document.getElementById("location").textContent =
+        "City : " + user.location.city;
+      document.getElementById("email").textContent = user.email;
+      document.getElementById("age").textContent = "Age : " + user.dob.age;
+    })();
+  </script>
+</html>
